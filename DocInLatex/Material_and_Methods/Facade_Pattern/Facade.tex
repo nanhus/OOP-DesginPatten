@@ -2,7 +2,7 @@
 \chapter{2. Facade Pattern}
 \section{Đặt vấn đề - Rạp hát tại gia}
  Trước khi chúng ta đi chi tiết vào Facade Pattern, hãy tưởng tượng việc xây dựng rạp hát cho ngôi nhà thân yêu của mình\\[0.15in]
- Sau dày công nghiên cứu, cuối cùng ta có được một hệ thống hoàn chỉnh với một đĩa DVD, máy chiếu kỹ thuật số, màn hình tự động và cả một chút bỏng ngô nữa được mô tả trong hình dưới:
+ Sau dày công nghiên cứu, cuối cùng ta có được một hệ thống hoàn chỉnh với một đĩa DVD, máy chiếu kỹ thuật số, màn hình tự động và cả một chút bỏng ngô nữa:
 
 %Adding a figure
 \begin{figure}[!htb]
@@ -64,8 +64,8 @@ Dưới đây là doạn code minh họa cho lớp HomeTheaterFacade:
 
 \section{Thực tế}
 
-Trong ET++ application framework [WGM88], một ứng dụng có thể được tích hợp sẵn các công cụ duyệt để kiểm tra các đối tượng của nó tại thời điểm chạy. Những công cụ duyệt này được triển khai trong một hệ thống con riêng biệt bao gồm một lớp \textbf{Facade} được gọi là "ProgrammingEnvironment". Những facade này định nghĩa các toán tử như InspectObject và InspectClass để truy cập các trình duyệt\\[0.1in]
-Hệ điều hành The Choices [CIRM93] sử dụng facade để hợp thành nhiều framework thành một. Có những phần chính trong Choices là quy trình, không gian lưu trữ và không gian địa chỉ. Ứng với mỗi phần sẽ có một hệ thống con tương ứng, triển khai như một framework hỗ trợ chuyển Choices tới nhiều nền tảng phần cứng khác nhau. 2 trong những hệ thống con có một "representative" (i.e.facade). Những representatives là FileSystemlnterface (không gian lưu trữ) và Domain (không gian địa chỉ)
+Trong ET++ application framework [WGM88], một ứng dụng có thể được tích hợp sẵn các công cụ duyệt để kiểm tra các đối tượng của nó tại thời điểm chạy. Những công cụ duyệt này được triển khai trong một hệ thống con riêng biệt bao gồm một lớp \textbf{Facade} được gọi là "ProgrammingEnvironment". Những facade này định nghĩa các thao tác như InspectObject và InspectClass để truy cập các trình duyệt\\[0.1in]
+Hệ điều hành The Choices [CIRM93] sử dụng facade để hợp thành nhiều framework thành một. Có những phần chính trong Choices là quy trình, không gian lưu trữ và không gian địa chỉ. Ứng với mỗi phần sẽ có một hệ thống con tương ứng, triển khai như một framework hỗ trợ chuyển Choices trên nhiều nền tảng phần cứng khác nhau. 2 trong những hệ thống con có một "representative" (i.e.facade). Những representatives là FileSystemlnterface (không gian lưu trữ) và Domain (không gian địa chỉ)
 
 %=== END OF MM ===
 \newpage

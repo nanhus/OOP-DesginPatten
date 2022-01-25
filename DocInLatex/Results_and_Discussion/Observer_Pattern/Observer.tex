@@ -1,4 +1,4 @@
-\chapter{5.Observer Pattern}
+\chapter{5. Observer Pattern}
 
 \section{Giới thiệu}
 \subsection{Đặt vấn đề}
@@ -9,7 +9,7 @@ Yêu cầu ứng dụng cung cấp 3 phần tử màn hình hiển thị:
     \item StatsisticsDisplay
     \item ForcastDisplay
 \end{itemize}
-Tất cả sẽ được cập nhật theo thời gian thực mỗi khi đối tượng WeatherData lấy được dự liệu mới nhất.\\
+Tất cả sẽ được cập nhật theo thời gian thực mỗi khi đối tượng WeatherData lấy được dữ liệu mới nhất.\\
 Ngoài ra, trạm quan sát cũng muốn "public" những API để những lập trình viên khác có thể viết ra những màn hình hiển thị thời tiết của riêng họ.\\
 Trong trường hợp trên, để có một thiết kế tốt có nghĩa là tách rời càng nhiều càng tốt và giảm sự phụ thuộc. Mẫu thiết kế Observer (quan sát) có thể được sử dụng bất cứ khi nào mà một đối tượng có sự thay đổi trạng thái, tất các thành phần phụ thuộc của nó sẽ được thông báo và cập nhật một cách tự động.
 \subsection{Mục đích sử dụng}
@@ -20,7 +20,7 @@ Observer Pattern phục vụ mục đích:
     \item Có thể một đối tượng có thể thông báo cho một số đối tượng khác kết thúc mở.
     
 \end{itemize}
- Việc xác định phụ thuộc một-nhiều giữa các đối tượng bằng cách xác định một đối tượng (chủ thể) cập nhật trạng thái của các đối tượng phụ thuộc một cách trực tiếp là không linh hoạt vì nó kết hợp chủ thể với các đối tượng phụ thuộc cụ thể. Tuy nhiên, nó có thể có ý nghĩa từ quan điểm hiệu suất hoặc nếu việc triển khai đối tượng được kết hợp chặt chẽ (hãy nghĩ đến các cấu trúc nhân cấp thấp thực thi hàng nghìn lần một giây). Các đối tượng được kết hợp chặt chẽ có thể khó triển khai trong một số trường hợp và khó sử dụng lại vì chúng tham chiếu và biết về (và cách cập nhật) nhiều đối tượng khác nhau với các giao diện khác nhau. Trong các tình huống khác, các đối tượng được kết hợp chặt chẽ có thể là một lựa chọn tốt hơn vì trình biên dịch sẽ có thể phát hiện lỗi tại thời điểm biên dịch và tối ưu hóa mã ở cấp lệnh CPU.
+Việc xác định phụ thuộc một-nhiều giữa các đối tượng bằng cách xác định một đối tượng (chủ thể) cập nhật trạng thái của các đối tượng phụ thuộc một cách trực tiếp là không linh hoạt vì nó kết hợp chủ thể với các đối tượng phụ thuộc cụ thể. Tuy nhiên, nó có thể có ý nghĩa từ quan điểm hiệu suất hoặc nếu việc triển khai đối tượng được kết hợp chặt chẽ (hãy nghĩ đến các cấu trúc nhân cấp thấp thực thi hàng nghìn lần một giây). Các đối tượng được kết hợp chặt chẽ có thể khó triển khai trong một số trường hợp và khó sử dụng lại vì chúng tham chiếu và biết về (và cách cập nhật) nhiều đối tượng khác nhau với các giao diện khác nhau. Trong các tình huống khác, các đối tượng được kết hợp chặt chẽ có thể là một lựa chọn tốt hơn vì trình biên dịch sẽ có thể phát hiện lỗi tại thời điểm biên dịch và tối ưu hóa mã ở cấp lệnh CPU.
  
 \section{Định nghĩa và mô hình cấu trúc}
 \subsection{Định nghĩa}
@@ -47,7 +47,7 @@ Observer tạo ra sự tương tác được kết hợp lỏng lẻo giữa ch�
 \end{itemize} 
 Chú ý
 \begin{itemize}
-    \item đối tượng chỉ biết rằng Observer thực hiện giao diện Observer interface.
+    \item Đối tượng chỉ biết rằng Observer thực hiện giao diện Observer interface.
     \begin{itemize}
         \item Chúng ta có thể thêm / bớt Observer thuộc bất kỳ loại nào bất kỳ lúc nào.
         \item Chúng ta không bao giờ phải sửa đổi đối tượng để thêm một loại Observer mới.
@@ -58,7 +58,7 @@ Chú ý
     \end{itemize}
     \item Observer có thể phải biết về lớp ConcreteSubject nếu nó cung cấp nhiều phương thức liên quan đến trạng thái khác nhau.
     \begin{itemize}
-        \item Mặt khác, dữ liệu có thể được chuyển cho Observer thông qua phương thức update ().
+        \item Mặt khác, dữ liệu có thể được chuyển cho Observer thông qua phương thức update().
     \end{itemize}
 \end{itemize}
 

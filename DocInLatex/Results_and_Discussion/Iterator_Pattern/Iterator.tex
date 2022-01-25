@@ -1,8 +1,8 @@
 \chapter{9. Iterator}
 \section{Giới thiệu}
 \subsection{Đặt vấn đề}
-Trong khi phát triển các ứng dụng, chúng ta làm việc với nhiều loại tập hợp như: cấu trúc cây, mảng, tập hợp, bảng băm, ngăn xếp, hàng đợi, … Cách thức mà tập hợp này lưu trữ đối tượng của nó rất khác nhau, và nếu bạn muốn truy cập dữ liệu của những đối tượng này, bạn phải học những kỹ thuật khác nhau cho từng loại tập hợp. Khi đó, mẫu Iterator là một giải pháp tốt.\\
-Chúng ta có thể sử dụng một interface được xác định phương thức cụ thể để truy cập tới từng phần tử của tập hợp. Sử dụng những phương thức này, chúng ta có thể truy xuất tới các phần tử trong tập hợp theo cùng cách dễ dàng nhất.
+Trong khi phát triển các ứng dụng, chúng ta làm việc với nhiều loại cấu trúc dữ liệu như: cấu trúc cây, mảng, tập hợp, bảng băm, ngăn xếp, hàng đợi, … Cách thức mà các cấu trúc dữ liệu này lưu trữ đối tượng của nó rất khác nhau, và nếu bạn muốn truy cập dữ liệu của những đối tượng này, bạn phải học những kỹ thuật khác nhau cho từng loại cấu trúc dữ liệu. Khi đó, mẫu Iterator là một giải pháp tốt.\\
+Chúng ta có thể sử dụng một interface được xác định phương thức cụ thể để truy cập tới từng phần tử của cấu trúc dữ liệu. Sử dụng những phương thức này, chúng ta có thể truy xuất tới các phần tử trong tập hợp theo cùng cách dễ dàng nhất.
 
 \begin{figure}[!htb]
     \centering
@@ -18,9 +18,9 @@ Chúng ta có thể sử dụng một interface được xác định phương t
     \item Chúng ta có thể truy cập song song trên cùng một tập hợp vì mỗi đối tượng iterator có chứa trạng thái riêng của nó.
 \end{itemize}
 
-\section{Định nghĩa và mô hình cấu trúc}
+\section{Định nghĩa và Mô hình cấu trúc}
 \subsection{Định nghĩa}
-Iterator Pattern là một trong những Pattern thuộc nhóm hành vi(Behavioral). Nó được sử dụng để “Cung cấp một cách thức truy cập tuần tự tới các phần tử của một đối tượng tổng hợp, mà không cần phải tạo dựng riêng các phương pháp truy cập cho đối tượng tổng hợp này.
+Iterator Pattern là một trong những Pattern thuộc nhóm hành vi (Behavioral). Nó được sử dụng để cung cấp một cách thức truy cập tuần tự tới các phần tử của một đối tượng tổng hợp, mà không cần phải tạo dựng riêng các phương pháp truy cập cho đối tượng tổng hợp này.
 
 \subsection{Mô hình cấu trúc}
 \begin{figure}[!htb]
@@ -31,7 +31,7 @@ Iterator Pattern là một trong những Pattern thuộc nhóm hành vi(Behavior
 \end{figure}
 
 \begin{itemize}
-    \item Aggregate : là một interface định nghĩa định nghĩa các phương thức để tạo Iterator object.
+    \item Aggregate : là một interface định nghĩa các phương thức để tạo Iterator object.
     \item ConcreteAggregate : cài đặt các phương thức của Aggregate, nó cài đặt interface tạo Iterator để trả về một thể hiện của ConcreteIterator thích hợp.
     \item Iterator : là một interface hay abstract class, định nghĩa các phương thức để truy cập và duyệt qua các phần tử.
     \item ConcreteIterator : cài đặt các phương thức của Iterator, giữ index khi duyệt qua các phần tử.
@@ -85,11 +85,12 @@ Dưới đây là code minh họa cài đặt:
 \begin{itemize}
     \item Truy xuất nhiều loại tập hợp
     \item Ứng dụng trong chuyển kênh của vô tuyến tuyền hình
-    \item Áp dụng trong thư viện java
+    \item Ví dụ trong thư viện java
     \begin{itemize}
         \item java.util.Iterator 
         \item java.util.Enumeration
     \end{itemize}
+    \item ObjectWindows 2.0 [Bor94] cung cấp một lớp phân cấp những iterator cho các container. Ta có thể duyệt các container khác nhau bằng việc sử dụng toán tử ++ để đưa iterator đến vị trí kế tiếp
 \end{itemize}
 
 

@@ -13,11 +13,11 @@ Factory Pattern mô tả cách giải quyết các vấn đề như vậy.
 \subsection{Mục đích sử dụng}
 Mục đích sử dụng:
 \begin{itemize}
-    \item Giúp việc khởi tạo các đối tượngs mà che giấu đi xử lí logic của việc khởi tạo đó. Người dùng không biết logic thực sự được khởi tạo bên dưới phương thức factory.
+    \item Giúp việc khởi tạo các đối tượng mà che giấu đi xử lí logic của việc khởi tạo đó. Người dùng không biết logic thực sự được khởi tạo bên dưới phương thức factory.
     \item Mẫu thiết kế này cho phép các lớp con chọn kiểu đối tượng cần tạo.
     \item Nó thúc đẩy sự liên kết lỏng lẻo bằng cách loại bỏ sự cần thiết phải ràng buộc các lớp cụ thể vào code. Nghĩa là code chỉ tương tác với interface hoặc lớp abstract, để nó sẽ làm việc với bất kỳ lớp nào implements interface đó hoặc extends lớp abstract.
-    \item Factory Pattern giúp giảm sự phụ thuộc giữa các module: cung cấp 1 hướng tiếp cận với Interface thay vì các implement. Giúp chuơng trình độc lập với những lớp cụ thể mà chúng ta cần tạo 1 đối tượng, code ở phía client sẽ không bị ảnh hưởng khi thay đổi logic ở factory hay sub class.
-    \item Việc mở rộng code dễ dàng hơn: khi cần mở rộng, chỉ việc tạo ra những sub class và implement thêm vào factory method.
+    \item Factory Pattern giúp giảm sự phụ thuộc giữa các module: cung cấp 1 hướng tiếp cận với Interface thay vì các implement. Giúp chương trình độc lập với những lớp cụ thể mà chúng ta cần tạo 1 đối tượng, code ở phía client sẽ không bị ảnh hưởng khi thay đổi logic ở factory hay subclass.
+    \item Việc kế thừa dễ dàng hơn: khi cần kế thừa, chỉ việc tạo ra những subclass và implement thêm vào factory method.
     \item Dễ dạng quản lý life cycle của các đối tượng được tạo bởi Factory Method Pattern.
     \item Thống nhất về mặt naming convention: giúp cho các developer có thể hiểu về cấu trúc source code.
 \end{itemize}
@@ -41,8 +41,8 @@ Mẫu thiết kế Abstract Factory cung cấp một giao diện để tạo cá
     \label{fig:structure_factory}
 \end{figure}
 \begin{itemize}
-    \item Super Class: môt supper class trong Factory Pattern có thể là một interface, abstract class hay một class thông thường.
-    \item Sub Classes: các sub class sẽ cài đặt các phương thức của supper class theo nghiệp vụ riêng của nó.
+    \item Super Class: môt super class trong Factory Pattern có thể là một interface, abstract class hay một class thông thường.
+    \item Sub Classes: các sub class sẽ cài đặt các phương thức của super class theo nghiệp vụ riêng của nó.
     \item Factory Class: một class chịu tránh nhiệm khởi tạo các đối tượng sub class dựa theo tham số đầu vào. Lưu ý: lớp này là Singleton hoặc cung cấp một public static method cho việc truy xuất và khởi tạo đối tượng. Factory class sử dụng if-else hoặc switch-case để xác định class con đầu ra.
 \end{itemize}
 \section{Cách cài đặt}
@@ -90,7 +90,7 @@ Bước 2: Tạo các đối tượng cụ thể cài đặt giao diện Shape.
 \end{figure}
 
 \newpage
-Bước 3:Tạo một class ShapeFactory để tạo đối tượng của lớp cụ thể dựa trên thông tin đã cho.
+Bước 3: Tạo một class ShapeFactory để tạo đối tượng của lớp cụ thể dựa trên thông tin đã cho.
 
 \begin{figure}[!htb]
     \centering
@@ -99,7 +99,7 @@ Bước 3:Tạo một class ShapeFactory để tạo đối tượng của lớp
     \label{fig:shape_factory_class}
 \end{figure}
 
-Bước 4:Sử dụng Factory để lấy đối tượng của lớp cụ thể bằng cách truyền một thông tin như kiểu.
+Bước 4: Sử dụng Factory để lấy đối tượng của lớp cụ thể bằng cách truyền một thông tin như kiểu.
 
 \begin{figure}[!htb]
     \centering
@@ -124,6 +124,6 @@ Output:
     \item BeanFactory trong Spring Framework.
     \item SessionFactory trong Hibernate Framework.
     \item Nó định nghĩa các Abstract Factory trong WidgetKit và DialogKit để tạo ra các đối tượng giao diện người dùng có giao diện cụ thể.
-    \item Sử dụng mẫuAbstract Factory để đạt được tính di động trên các hệ thống khác nhau (ví dụ: X Windows và SunView). Lớp trừu tượng WindowSystem xác định giao diện để tạo đối tượng đại diện cho tài nguyên hệ thống cửa sổ (ví dụ: MakeWindow, MakeFont, MakeColor).
+    \item Sử dụng mẫu Abstract Factory để đạt được tính di động trên các hệ thống khác nhau (ví dụ: X Windows và SunView). Lớp trừu tượng WindowSystem xác định giao diện để tạo đối tượng đại diện cho tài nguyên hệ thống cửa sổ (ví dụ: MakeWindow, MakeFont, MakeColor).
 \end{itemize}
 
